@@ -1,0 +1,8 @@
+# Demo video — 2:40 target
+0:00–0:20 — Hello, today we present SmartBudget, a multi-device application that helps users record expenses and monitor their budget. We selected quick expense registration and budget synchronization.
+0:20–0:55 — Open mobile MainActivity.kt. The phone listens for the expense path, decodes the JSON payload and validates it. The expense ID prevents duplicate records when a message is retried. The phone stores the expense and calculates the remaining budget. It sends an acknowledgement and publishes a budget snapshot using DataClient.
+0:55–1:25 — Open wear MainActivity.kt. The watch creates an expense with a unique ID, amount, category and timestamp. MessageClient sends it to the connected phone. The message listener receives the acknowledgement, and onDataChanged reads the budget keys and refreshes the display.
+1:25–2:05 — Show both emulators. The initial budget is one thousand pesos. Select fifty pesos and Food on the watch, then press Add expense. The phone should display the new expense and nine hundred and fifty pesos remaining. The watch should display success and the same remaining budget.
+2:05–2:35 — On the phone, change the budget to one thousand two hundred pesos and press Update budget. The watch should now display one thousand one hundred and fifty pesos. This demonstrates the second feature independently.
+2:35–2:45 — In conclusion, the phone is the authoritative data source and the watch provides fast interactions and synchronized information. Thank you.
+Record only after both features actually work; adapt narration to observed results.
